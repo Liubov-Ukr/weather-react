@@ -6,8 +6,8 @@ export default function Header() {
       <div className="col-sm-3">
         <a href="#">
           <img
-            src="https://cdn.freebiesupply.com/logos/thumbs/2x/weather-ios-logo.png"
-            class="img-thumbnail"
+            src="https://i.pinimg.com/originals/77/0b/80/770b805d5c99c7931366c2e84e88f251.png"
+            className="img-thumbnail"
             alt="logo"
           />
         </a>
