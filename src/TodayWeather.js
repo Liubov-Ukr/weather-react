@@ -1,14 +1,11 @@
 import "./TodayWeather.css";
+import Animateicon from "./Animateicon";
 import Date from "./Date";
 export default function TodayWeather(props) {
   return (
     <div className="row todayWeather">
       <div className="col-sm-5 float-left">
-        <img
-          className="img-thumbnail"
-          src={props.weather.icon}
-          alt="cloudy-sunny"
-        />{" "}
+        <Animateicon icon={props.weather.icon} />
         <span className="todayTemp">
           {Math.round(props.weather.temperature)} °C
         </span>{" "}
@@ -22,7 +19,6 @@ export default function TodayWeather(props) {
       <div className="col-sm-3">
         {props.weather.city} <br />
         <Date date={props.weather.date} />
-   
       </div>
     </div>
   );
