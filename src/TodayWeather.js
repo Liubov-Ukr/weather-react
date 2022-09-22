@@ -1,4 +1,5 @@
 import "./TodayWeather.css";
+import Date from "./Date";
 export default function TodayWeather(props) {
   return (
     <div className="row todayWeather">
@@ -20,7 +21,8 @@ export default function TodayWeather(props) {
       </div>
       <div className="col-sm-3">
         {props.weather.city} <br />
-        {props.weather.date}
+        <Date date={props.weather.date} />
+   
       </div>
     </div>
   );

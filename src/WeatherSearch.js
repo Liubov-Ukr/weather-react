@@ -18,16 +18,21 @@ export default function WeatherSearch(props) {
       wind: response.data.wind.speed,
       city: response.data.name,
       precipitation: response.data.weather[0].main,
-      date: "Friday, 12: 40"
+      date: new Date(response.data.dt * 1000),
     });
-    console.log(response.data);
   }
+
   function SearchWeather(event) {
     event.preventDefault();
+    search();
   }
-  function cityinput(event) {
+  function cityChange(event) {
     event.preventDefault();
     setCity(event.target.value);
+  }
+  function search() {
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5f75241acceea2bc856a6c6d4c9b0b23&units=metric`;
+    axios.get(url).then(ShowWeather);
   }
 
   if (weather.ready) {
@@ -45,7 +50,7 @@ export default function WeatherSearch(props) {
             <form onSubmit={SearchWeather}>
               <div className="input-group">
                 <input
-                  onChange={cityinput}
+                  onChange={cityChange}
                   type="text"
                   className="form-control"
                   placeholder="Enter a city"
@@ -59,7 +64,7 @@ export default function WeatherSearch(props) {
           </div>
         </div>
         <h1>
-          {city}{" "}
+          {weather.city}{" "}
           <span className="WeatherTemp">{Math.round(weather.temperature)}</span>
           <span>°C</span>
         </h1>
@@ -72,13 +77,11 @@ export default function WeatherSearch(props) {
           <DayWeek />
           <DayWeek />
         </div>
-        <TodayWeather weather={weather} />;
+        <TodayWeather weather={weather} />
       </div>
     );
   } else {
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5f75241acceea2bc856a6c6d4c9b0b23&units=metric
-`;
-    axios.get(url).then(ShowWeather);
+    search();
     return <p>Loading...</p>;
   }
 }
