@@ -1,0 +1,8 @@
+.img-thumbnail {
+  max-width: 45%;
+  border: none;
+}
+.WeatherTemp {
+  font-size: 43px;
+  font-weight: 600;
+}
