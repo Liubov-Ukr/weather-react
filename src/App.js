@@ -6,7 +6,7 @@ import Footer from "./Footer";
 
 export default function App() {
   return (
-    <div className="App ard">
+    <div className="App ard mt-5">
       <div className="container">
         <WeatherSearch defaultCity="Malmo" />
         <Footer />

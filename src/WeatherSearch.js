@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherSearch.css";
-import DayWeek from "./DayWeek";
+// import DayWeek from "./DayWeek";
 import TodayWeather from "./TodayWeather";
 
 export default function WeatherSearch(props) {
@@ -63,12 +63,12 @@ export default function WeatherSearch(props) {
             </form>
           </div>
         </div>
-        <h1>
+        <h1 className="mt-5">
           {weather.city}{" "}
           <span className="WeatherTemp">{Math.round(weather.temperature)}</span>
           <span>°C</span>
         </h1>
-        <div className="row">
+        {/* <div className="row">
           <DayWeek />
           <DayWeek />
           <DayWeek />
@@ -76,7 +76,7 @@ export default function WeatherSearch(props) {
           <DayWeek />
           <DayWeek />
           <DayWeek />
-        </div>
+        </div> */}
         <TodayWeather weather={weather} />
       </div>
     );

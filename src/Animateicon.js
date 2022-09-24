@@ -22,13 +22,11 @@ export default function Animateicon(props) {
     "50n": "FOG",
   };
   return (
-    <div className="icon">
-      <ReactAnimatedWeather
-        icon={codeicon[props.icon]}
-        color="goldenrod"
-        size={80}
-        animate={true}
-      />
-    </div>
+    <ReactAnimatedWeather
+      icon={codeicon[props.icon]}
+      color="goldenrod"
+      size={80}
+      animate={true}
+    />
   );
 }

@@ -1,8 +1,13 @@
 .img-thumbnail {
   max-width: 45%;
   border: none;
+  margin-top: -20px;
 }
 .WeatherTemp {
   font-size: 43px;
   font-weight: 600;
+}
+.form-control {
+  background-color: #e0eeff;
+  border: none;
 }

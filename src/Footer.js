@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer>
+    <footer className="mt-5">
       This project was coded by <b>Liubov Opryshchenko</b> and is{" "}
       <a
         href="https://github.com/Liubov-Ukr/weather-react"

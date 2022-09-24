@@ -1,15 +1,14 @@
 import "./TodayWeather.css";
 import Animateicon from "./Animateicon";
+import Temperature from "./Temperature";
 import Date from "./Date";
 export default function TodayWeather(props) {
   return (
     <div className="row todayWeather">
-      <div className="col-sm-5 float-left">
+      <div className="col-sm-5 d-flex float-left">
         <Animateicon icon={props.weather.icon} />
-        <span className="todayTemp">
-          {Math.round(props.weather.temperature)} °C
-        </span>{" "}
-        <span>{props.weather.precipitation}</span>
+        <Temperature temp={props.weather.temperature} />
+        <span className="todayprecip">{props.weather.precipitation}</span>
       </div>
       <div className="col-sm-4">
         <span>Humidity: {Math.round(props.weather.humidity)} %</span>
