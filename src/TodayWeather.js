@@ -7,6 +7,7 @@ export default function TodayWeather(props) {
     <div className="row todayWeather">
       <div className="col-sm-5 d-flex float-left">
         <Animateicon icon={props.weather.icon} />
+
         <Temperature temp={props.weather.temperature} />
         <span className="todayprecip">{props.weather.precipitation}</span>
       </div>

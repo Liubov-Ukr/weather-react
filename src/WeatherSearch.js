@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherSearch.css";
-// import DayWeek from "./DayWeek";
+import WeatherForecast from "./WeatherForecast";
 import TodayWeather from "./TodayWeather";
 
 export default function WeatherSearch(props) {
@@ -11,6 +11,8 @@ export default function WeatherSearch(props) {
   function ShowWeather(response) {
     setWeather({
       ready: true,
+      lat: response.data.coord.lat,
+      lon: response.data.coord.lon,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
@@ -31,7 +33,9 @@ export default function WeatherSearch(props) {
     setCity(event.target.value);
   }
   function search() {
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5f75241acceea2bc856a6c6d4c9b0b23&units=metric`;
+    let APIKey = "5f75241acceea2bc856a6c6d4c9b0b23";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=metric`;
+
     axios.get(url).then(ShowWeather);
   }
 
@@ -68,15 +72,9 @@ export default function WeatherSearch(props) {
           <span className="WeatherTemp">{Math.round(weather.temperature)}</span>
           <span>°C</span>
         </h1>
-        {/* <div className="row">
-          <DayWeek />
-          <DayWeek />
-          <DayWeek />
-          <DayWeek />
-          <DayWeek />
-          <DayWeek />
-          <DayWeek />
-        </div> */}
+        <div className="row">
+          <WeatherForecast weather={weather} />
+        </div>
         <TodayWeather weather={weather} />
       </div>
     );

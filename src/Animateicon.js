@@ -21,10 +21,11 @@ export default function Animateicon(props) {
     "50d": "FOG",
     "50n": "FOG",
   };
+  
   return (
     <ReactAnimatedWeather
       icon={codeicon[props.icon]}
-      color="goldenrod"
+      color="#198754"
       size={80}
       animate={true}
     />
