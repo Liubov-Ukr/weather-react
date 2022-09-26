@@ -26,15 +26,16 @@ export default function ForecastDay(props) {
   return (
     <div className="card-body card-title">
       <div className="card-title">
-        <h5>{days()}</h5>
+        <h5 className="TWeather">{days()}</h5>
       </div>
       <div>
-        <Animateicon icon={icon()} />
+        <Animateicon icon={icon()} color="#3a3b3e" size="60" />
       </div>
 
       <div>
         {" "}
-        <span className="maxTemp">{MaxTemp()}°</span> {MinTemp()}°{" "}
+        <span className="maxTemp">{MaxTemp()}°</span>{" "}
+        <span className="minTemp">{MinTemp()}° </span>
       </div>
     </div>
   );

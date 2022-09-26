@@ -60,9 +60,6 @@ export default function WeatherSearch(props) {
                   placeholder="Enter a city"
                 />
                 <button className="btn btn-primary">Search</button>
-                <button type="button" className="btn btn-success">
-                  Currently
-                </button>
               </div>
             </form>
           </div>

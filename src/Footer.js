@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="mt-5">
+    <footer className="mt-5 TWeather">
       This project was coded by{" "}
       <a
         href="https://github.com/Liubov-Ukr"
