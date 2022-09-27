@@ -1,4 +1,3 @@
-import "./Animateicon.css";
 import ReactAnimatedWeather from "react-animated-weather";
 export default function Animateicon(props) {
   const codeicon = {
@@ -21,7 +20,7 @@ export default function Animateicon(props) {
     "50d": "FOG",
     "50n": "FOG",
   };
-  
+
   return (
     <ReactAnimatedWeather
       icon={codeicon[props.icon]}
