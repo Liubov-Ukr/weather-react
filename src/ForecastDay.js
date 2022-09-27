@@ -17,11 +17,6 @@ export default function ForecastDay(props) {
 
     return maxTemp;
   }
-  function icon() {
-    let icon = props.forecast.weather[0].icon;
-
-    return icon;
-  }
 
   return (
     <div className="card-body card-title">
@@ -29,7 +24,7 @@ export default function ForecastDay(props) {
         <h5 className="TWeather">{days()}</h5>
       </div>
       <div>
-        <Animateicon icon={icon()} />
+        <Animateicon icon={props.forecast.weather[0].icon} />
       </div>
 
       <div>
