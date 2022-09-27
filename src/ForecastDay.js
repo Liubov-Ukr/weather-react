@@ -29,7 +29,7 @@ export default function ForecastDay(props) {
         <h5 className="TWeather">{days()}</h5>
       </div>
       <div>
-        <Animateicon icon={icon()} color="#3a3b3e" size={60} />
+        <Animateicon icon={icon()} size={60} />
       </div>
 
       <div>
