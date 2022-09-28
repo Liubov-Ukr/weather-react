@@ -3,18 +3,20 @@ import axios from "axios";
 import "./WeatherForecast.css";
 import ForecastDay from "./ForecastDay";
 export default function WeatherForecast(props) {
-  let [forecast, setForecast] = useState(false);
+  let [forecast, setForecast] = useState(null);
+  let [loaded, setLoaded] = useState(false);
   useEffect(() => {
     setForecast(false);
   }, [props.weather]);
 
   function ShowForecast(response) {
+    setLoaded(true);
     setForecast(response.data.daily);
   }
 
-  if (forecast) {
+  if (loaded) {
     return (
-      <div className="row mt-5 forecast">
+      <div className="row mt-5">
         {forecast.map(function (loopForecast, index) {
           if (index < 7) {
             return (
@@ -22,6 +24,8 @@ export default function WeatherForecast(props) {
                 <ForecastDay forecast={loopForecast} />
               </div>
             );
+          } else {
+            return null;
           }
         })}
       </div>
