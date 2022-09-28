@@ -6,7 +6,7 @@ export default function WeatherForecast(props) {
   let [forecast, setForecast] = useState(null);
   let [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    setForecast(false);
+    setLoaded(false);
   }, [props.weather]);
 
   function ShowForecast(response) {
